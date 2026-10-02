@@ -1,0 +1,9 @@
+# Android fstab (fs_mgr) for Lenovo P2a42 (kuntao_row)
+# <src>                                          <mnt_point>       <type>  <mnt_flags and options>                                              <fs_mgr_flags>
+/dev/block/bootdevice/by-name/system           /system             ext4    ro,barrier=1,discard                                                  wait
+/dev/block/bootdevice/by-name/userdata         /data               auto    nosuid,nodev,noatime,nodiratime,discard                                wait,check,encryptable=footer,length=-16384
+/dev/block/bootdevice/by-name/cache            /cache              ext4    nosuid,nodev,noatime,barrier=1,data=ordered                            wait,check,formattable
+/dev/block/bootdevice/by-name/persist          /persist            ext4    nosuid,nodev,barrier=1                                                wait,check,formattable
+/dev/block/bootdevice/by-name/misc             /misc               emmc    defaults                                                              defaults
+/devices/soc/7824900.sdhci/mmc_host*          /storage/sdcard1    vfat    nosuid,nodev                                                           wait,voldmanaged=sdcard1:auto,noemulatedsd,encryptable=footer
+/devices/soc/7000000.ssusb/7000000.dwc3/xhci-hcd.0.auto*  /storage/usbotg  vfat  nosuid,nodev                                                     wait,voldmanaged=usbotg:auto

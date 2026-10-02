@@ -1,0 +1,6 @@
+# All the partitions to be wiped (in order) under recovery.
+/dev/block/bootdevice/by-name/system
+/dev/block/bootdevice/by-name/userdata
+/dev/block/bootdevice/by-name/cache
+# Wipe boot last so an interrupted wipe still leaves partitions consistent.
+/dev/block/bootdevice/by-name/boot

@@ -1,0 +1,8 @@
+ro.sf.lcd_density=480
+ro.hardware.keystore=msm8953
+persist.sys.usb.config=mtp,adb
+
+# OTA / recovery compatibility identifiers
+ro.product.model=Lenovo P2a42
+ro.product.device=kuntao_row
+ro.build.product=kuntao_row
