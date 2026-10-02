@@ -1,8 +1,1 @@
-[
-  {
-    "remote": "omni",
-    "repository": "android_vendor_omni",
-    "targetPath": "vendor/omni",
-    "branch": "android-9.0"
-  }
-]
+[]
