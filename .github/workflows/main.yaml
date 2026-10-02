@@ -58,6 +58,13 @@ jobs:
           EOF
           repo sync -c --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j$(nproc)
 
+      - name: Init recovery theme submodule (repo does not fetch submodules)
+        run: |
+          cd "${GITHUB_WORKSPACE}/fox/bootable/recovery"
+          git config submodule.gui/theme.url "https://gitlab.com/OrangeFox/misc/theme.git"
+          git submodule update --init --depth 1 gui/theme
+          test -f gui/theme/portrait_hdpi/ui.xml
+
       - name: Place kuntao_row device tree
         run: |
           mkdir -p "${GITHUB_WORKSPACE}/fox/device/lenovo/kuntao_row"

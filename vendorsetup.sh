@@ -42,7 +42,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
 	export OF_QUICK_BACKUP_LIST="/boot;/system;/data;"
 	export FOX_R11=1
-	export FOX_VERSION="R11.1"
 	export OF_MAINTAINER="kuntao-port"
 
 	# Screen: 5.5" 1080x1920, no notch
@@ -52,9 +51,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_STATUS_INDENT_RIGHT=48
 	export OF_HIDE_NOTCH=0
 	export OF_CLOCK_POS=1
-
-	# Run a post-format process to work around MTP issues after data format
-	export OF_RUN_POST_FORMAT_PROCESS=1
 
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
 		export | grep "FOX" >> $FOX_BUILD_LOG_FILE
