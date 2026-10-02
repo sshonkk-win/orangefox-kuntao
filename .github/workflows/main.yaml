@@ -48,6 +48,9 @@ jobs:
                - omnirom pruned android-9.0 on frameworks_base/system_core -> AOSP tag
                - OrangeFox vendor/recovery 'master' is gone -> 'legacy' (R10/R11-era) -->
           <manifest>
+            <remove-project name="android_frameworks_base" />
+            <remove-project name="android_system_core" />
+            <remove-project name="vendor/recovery" />
             <project path="frameworks/base" name="platform/frameworks/base" remote="aosp" revision="refs/tags/android-9.0.0_r47" />
             <project path="system/core" name="platform/system/core" remote="aosp" revision="refs/tags/android-9.0.0_r47" />
             <project path="vendor/recovery" name="vendor/recovery" remote="fox" revision="legacy" />
