@@ -106,7 +106,3 @@ TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
 TW_USE_TOOLBOX := true
 TWRP_EVENT_LOGGING := false
-
-# Time zone data for recovery
-PRODUCT_COPY_FILES += \
-    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
