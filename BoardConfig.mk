@@ -91,6 +91,15 @@ TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_INCLUDE_CRYPTO := true
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+# Source for the libcryptfs_hw HAL (synced from the fox manifest).
+# Without this, libbmlutils fails to link with "no known rule to make libcryptfs_hw".
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
+
+# Spoof a far-future security patch so old stock (2017) is never seen as
+# "newer" than the recovery (anti-rollback / patch-level sanity)
+PLATFORM_VERSION := 16.1.0
+PLATFORM_SECURITY_PATCH := 2099-12-31
+VENDOR_SECURITY_PATCH := 2099-12-31
 
 # Debug
 TARGET_USES_LOGD := true
