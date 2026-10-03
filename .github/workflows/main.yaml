@@ -34,6 +34,13 @@ jobs:
           cd ofox-scripts
           sudo bash setup/android_build_env.sh
 
+      - name: Point python at Python 2 (Pie build tools are py2-only)
+        run: |
+          sudo apt install -y python2
+          sudo ln -sf /usr/bin/python2 /usr/bin/python
+          python --version
+          repo --version || true
+
       - name: Sync OrangeFox sources (shallow)
         run: |
           mkdir -p "${GITHUB_WORKSPACE}/fox"
